@@ -38,7 +38,7 @@ export class UsePiwikTracker {
    trackPageView(title?: string) {
     try {
       if(title){
-        _paq.push(['trackPageView'], title);
+        _paq.push(['trackPageView', title]);
       } else {
         _paq.push(['trackPageView']);
       }
@@ -65,7 +65,7 @@ export class UsePiwikTracker {
 
     trackSiteSearch(searchQuery: string, category: string, resultsCount: number){
       try {
-      _paq.push(['trackSiteSearch'], searchQuery, category, resultsCount);
+      _paq.push(['trackSiteSearch', searchQuery, category, resultsCount]);
       } catch (e) {
         if (!(e instanceof ReferenceError)) {
           throw e;
